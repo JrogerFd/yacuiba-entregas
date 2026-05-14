@@ -49,7 +49,7 @@ app.get('/api/usuarios', async (req, res) => {
 app.use(express.static(path.join(__dirname, '../dist')));
 
 // Cualquier ruta que no sea de la API, redirigirla al index.html de React
-app.get('*', (req, res) => {
+app.get('/:path*', (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
